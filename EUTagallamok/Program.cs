@@ -15,10 +15,19 @@ namespace EUTagallamok
         {
             Orszagok = Orszag.Beolvasas();
 
+            OrszagokSzama();
 
 
 
             Console.ReadKey();
+
+        }
+
+        private static void OrszagokSzama()
+        {
+
+            Console.WriteLine($"3. Feladat: EU tagallamainak szama: {Orszagok.Count}");
+
 
         }
     }
