@@ -16,11 +16,33 @@ namespace EUTagallamok
             Orszagok = Orszag.Beolvasas();
 
             OrszagokSzama();
-
+            CsatlakozottOrszagokSzama();
 
 
             Console.ReadKey();
 
+        }
+
+        private static void CsatlakozottOrszagokSzama()
+        {
+            int orszagokSzama = 0;
+
+            foreach (var o in Orszagok)
+            {
+                if (o.CsatlakozasDatuma.Year == 2007)
+                {
+                    orszagokSzama++;
+                }
+            }
+
+            //LINQ
+            //orszagokSzama = Orszagok.Where(x => x.CsatlakozasDatuma.Year == 2007).Count();
+
+            Console.WriteLine($"4. Feladat: 2007-ben {orszagokSzama} orszag csatlakozott.");
+
+
+            
+            
         }
 
         private static void OrszagokSzama()
