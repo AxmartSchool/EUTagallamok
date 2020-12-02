@@ -17,9 +17,22 @@ namespace EUTagallamok
 
             OrszagokSzama();
             CsatlakozottOrszagokSzama();
+            MagyarorszagCsatlakozasa();
 
 
             Console.ReadKey();
+
+        }
+
+        private static void MagyarorszagCsatlakozasa()
+        {
+
+
+            //LINQ
+            var datum = Orszagok.Find(x => x.Nev.Contains("Magyar")).CsatlakozasDatuma.ToShortDateString();
+
+            Console.WriteLine($"5. feladat: Magyarorszag csatlakozasanak datuma: {datum}");
+
 
         }
 
