@@ -18,9 +18,21 @@ namespace EUTagallamok
             OrszagokSzama();
             CsatlakozottOrszagokSzama();
             MagyarorszagCsatlakozasa();
+            MajusiCsatlakozas();
+
 
 
             Console.ReadKey();
+
+        }
+
+        private static void MajusiCsatlakozas()
+        {
+            //LINQ
+            Console.WriteLine($"6. feladat: Majusban {(Orszagok.Any(x => x.CsatlakozasDatuma.Month == 5) ? "volt" : "nem volt")} csatlakozas!");
+
+            
+             
 
         }
 
