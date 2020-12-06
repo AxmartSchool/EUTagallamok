@@ -19,11 +19,21 @@ namespace EUTagallamok
             CsatlakozottOrszagokSzama();
             MagyarorszagCsatlakozasa();
             MajusiCsatlakozas();
+            UtoljaraCsatlakozott();
 
 
 
             Console.ReadKey();
 
+        }
+
+        private static void UtoljaraCsatlakozott()
+        {
+
+            //LINQ
+            var utoljaraCsatlakozott = Orszagok.OrderByDescending(x => x.CsatlakozasDatuma).ToList()[0];
+
+            Console.WriteLine($"7. feladat: Legutoljara csatlakozott orszag: {utoljaraCsatlakozott.Nev}");
         }
 
         private static void MajusiCsatlakozas()
