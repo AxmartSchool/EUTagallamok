@@ -20,10 +20,39 @@ namespace EUTagallamok
             MagyarorszagCsatlakozasa();
             MajusiCsatlakozas();
             UtoljaraCsatlakozott();
-
+            Statisztika();
 
 
             Console.ReadKey();
+
+        }
+
+        private static void Statisztika()
+        {
+            Dictionary<int, int> statisztika = new Dictionary<int, int>();
+
+            foreach (var orszag in Orszagok)
+            {
+
+                if (statisztika.ContainsKey(orszag.CsatlakozasDatuma.Year))
+                {
+                    statisztika[orszag.CsatlakozasDatuma.Year]++;
+                }
+                else
+                {
+                    statisztika.Add(orszag.CsatlakozasDatuma.Year, 1);
+                }
+
+
+            }
+
+            Console.WriteLine("8. feladat: Statisztika");
+
+            foreach (var ev in statisztika)
+            {
+                Console.WriteLine($"\t{ev.Key} - {ev.Value} orszag");
+            }
+
 
         }
 
